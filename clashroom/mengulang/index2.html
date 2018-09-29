@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Coba todo list sendiri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+</head>
+<body>
+
+    <div>
+        <h1> Selamat Datang di todo list</h1>
+    </div>
+
+    <div>
+        <input id="masukkan" class="kotak" placeholder="masukkan nama anda disni">
+        <button id="tekan" class="tombol"> tambah</button>
+
+        <ul id="listku">
+            <li id="listt"></li>
+        </ul>
+    </div>
+    
+
+
+    <script>
+
+        const tempat = document.getElementById('masukkan')
+        const tekana = document.getElementById('tekan')
+        const daftar = document.getElementById('listku')
+
+ 
+        tekana.addEventListener('click',function(){
+            
+           const data = tempat.value
+            console.log(data)
+
+            daftar.innerHTML = daftar.innerHTML + ' <li id="listt">'+ data +'</li>'
+
+
+
+        })        
+
+    
+    </script>
+</body>
+</html>

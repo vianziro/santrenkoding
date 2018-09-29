@@ -1,0 +1,58 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1rem;
+    text-align: center;
+    color: white;
+    background-color: black;
+    text-shadow: 2px -2px 3px #000;
+    background-size: 100%;
+    background-image: url("https://relaxed-elion-bf7b3d.netlify.com/images/clock-1461689_1920.jpg") ;
+}
+
+.display-6 , .h3 {
+   
+   
+    font-weight: bold;
+    text-align: center;
+    text-decoration: double;
+    font-size: 40px;
+   
+    
+    
+}
+
+.identitas, .hitung {
+
+    text-align: center;
+}
+
+
+.ind {
+    
+    
+}
+
+.btn {
+
+    margin: 15px;
+    padding: 15px;
+
+}
+header {
+    margin-top: 150px; 
+}
+
+
+
+.lanjut {
+
+    font-weight: 200;
+    padding: 10px;
+}
+
+.lanjut1 {
+
+    font-weight: 200;
+    text-decoration: underline;
+    padding: 10px;
+}

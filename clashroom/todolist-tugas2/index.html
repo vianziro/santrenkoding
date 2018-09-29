@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Santren Koding</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <!-- <script src="main.js"></script> -->
+</head>
+<body>
+    <div class="container">
+        <h1> Todo List From Array</h1>
+        <br>
+        <input id="kotak" class="form-control" placeholder="input disini" width="30px" >
+        <button id="tombol" type="submit" class="btn btn-info bulat">+</button>
+
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="container" >
+        <ul id="listku" class="list-group">
+
+           <li  class="list-group-item" > <button class="hapus" id="hapusdata">hapus</button> </li>
+           
+        </ul>
+
+    </div>
+    
+    <script>
+        let dataTodo= []
+        const inputDom = document.getElementById('kotak')
+        const tombolDom = document.getElementById('tombol')
+        const listDom = document.getElementById('listku')
+
+        // const html = localStorage.getItem('html')
+       
+        const bankData = JSON.parse(localStorage.getItem('dataTodo'))
+
+        if (bankData){
+            dataTodo=bankData
+        }
+
+
+        function reload (){
+            let index = 0
+            listDom.innerHTML=""
+            while(index < dataTodo.length){
+
+                listDom.innerHTML += '<li  class="list-group-item" >' + dataTodo[index]+' <button class="hapus" id="hapusdata" onclick="hapusData('+index+')"> hapus </button> </li>'
+                index = index+1
+
+            }
+
+        }
+
+        function hapusData(datax){
+            console.log(datax)
+            dataTodo.splice(datax, 1)
+            
+            reload()
+            localStorage.setItem('dataTodo', JSON.stringify(dataTodo))
+
+        }
+        reload()
+
+
+        tombolDom.addEventListener('click',function() {
+            const dataku = inputDom.value 
+            dataTodo.push(dataku)
+            reload()
+            localStorage.setItem('dataTodo', JSON.stringify(dataTodo))
+
+        })
+
+        
+    </script>
+
+
+    
+</body>
+</html>

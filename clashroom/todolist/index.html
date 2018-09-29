@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Belajar mandiri</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <!-- <script src="main.js"></script> -->
+</head>
+<body>
+    <div class="container">
+        <h1> Todo List sederhana</h1>
+        <br>
+        <input id="kotak" class="form-control" placeholder="input disini" width="30px" >
+        <button id="tombol" type="submit" class="btn btn-info bulat">+</button>
+
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="container" >
+        <ul id="listku" class="list-group">
+
+         <input type="checkbox">   <li  class="list-group-item" > <button class="hapus" id="hapusdata">hapus</button> </li>
+           
+        </ul>
+
+    </div>
+    
+    <script>
+    
+        const inputDom = document.getElementById('kotak')
+        const tombolDom = document.getElementById('tombol')
+        const listDom = document.getElementById('listku')
+
+        const html = localStorage.getItem('html')
+        listDom.innerHTML = html
+
+
+        tombolDom.addEventListener('click',function() {
+            const dataku = inputDom.value 
+            console.log(dataku)
+            listDom.innerHTML = listDom.innerHTML + '   <li class="list-group-item"> <input type="checkbox"> ' + dataku + '<button id=" hapusdata"> hapus </button> </li>'
+            inputDom.value = ''
+            localStorage.setItem('html',listDom.innerHTML)
+
+
+
+
+        })
+
+        
+    </script>
+
+
+    
+</body>
+</html>

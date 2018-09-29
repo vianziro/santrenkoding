@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>coba1 </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <!-- <script src="main.js"></script> -->
+</head>
+<body>
+    <div>
+        <h1> saya mencoba buat counter </h1>
+    </div>
+
+    <div id="">
+        <h2>______ </h2>
+        <h3 id="nilai">_______</h3>
+        <button id="tambahkan" class="tambah"> tambah</button>
+        <button id="kurangi" class="kurang"> kurang </button>
+    </div>
+    
+
+
+    <script>
+        var number = 0
+        const skor = document.getElementById('nilai')
+        const plus = document.getElementById('tambahkan')
+        const minus = document.getElementById('kurangi')
+
+
+        plus.addEventListener('click', function(){
+            number = number + 1;
+            // console.log(number)
+            skor.innerHTML=number
+
+        })
+        minus.addEventListener('click',function(){
+
+            number = number - 1
+            skor.innerHTML=number
+        })
+    
+    
+    </script>
+</body>
+</html>

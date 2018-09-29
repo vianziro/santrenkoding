@@ -1,0 +1,97 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <meta charset="utf-8" />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <title>Belajar Array</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+     
+   <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+     <!-- <script src="main.js"></script>  -->
+ </head>
+ <body>
+     <h3> Todo </h3>
+     <ul id="list">
+         <li><input type="checkbox">makan <button> del </button> </li>
+         <li><input type="checkbox">mandi <button> del </button> </li>
+         <li><input type="checkbox">minum <button> del </button> </li>
+     </ul>
+     
+     <input id="inputTODO" placeholder="masukkan disni">
+     <button id="add-button" type="submit">add</button>
+    
+     <script>
+
+        
+
+         let todos = [];
+         const listDom = document.getElementById('list')
+
+         const tambahTodoku = document.getElementById('inputTODO')
+         const simpanTodo = document.getElementById('add-button')
+
+         const dataku = JSON.parse(localStorage.getItem('todos'));
+         console.log(dataku)
+        
+
+        if(dataku) {
+         todos = dataku;
+        }
+
+        function render() {
+                let index = 0;
+                listDom.innerHTML = "";
+                while (index < todos.length ){
+                    if(todos[index].status = true) {
+                    listDom.innerHTML += '<li><input checked onchange="statusBerubah('+index+')" type="checkbox"><strike>' + todos[index].nama
+                    
+                     + '</strike><button onclick="hapus('+index+')" >deleted</button></li> '
+                    index = index + 1
+
+                    } else {
+                        listDom.innerHTML += '<li><input  onchange="statusBerubah('+index+')" type="checkbox">' + todos[index].nama
+                    
+                    + '<button onclick="hapus('+index+')" >deleted</button></li> '
+                    }
+            
+         }}
+
+        function hapus(p){
+                console.log(p)
+                todos.splice(p, 1)
+                render()
+
+                localStorage.setItem('todos',JSON.stringify(todos))
+
+        }
+        render();
+
+        simpanTodo.addEventListener('click',function() {
+            const todo = { 
+             nama: tambahTodoku.value,
+             status: false
+
+            };
+            todos.push(todo)
+            console.log(todos)
+            render();
+            localStorage.setItem('todos', JSON.stringify(todos));
+
+        })
+
+        function statusBerubah(index) {
+                if(todos[index].status = true) {
+                    todos[index].status = false
+                }else{
+                    todos[index].status = true
+                }
+            
+        }
+         
+        //  listDom.innerHTML += '<li><input type="checkbox">' + todos[1] + '<button> del </button> </li>'
+        //  listDo m.innerHTML += '<li><input type="checkbox">' + todos[2] + '<button> del </button> </li>'
+     </script>
+     
+ </body>
+ </html>

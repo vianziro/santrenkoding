@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+
+    <input id="password" type="password" placeholder="masukkan password">
+    <button id="login"type="submit"> log in </button>
+    <h1 id="pesan"></h1>
+    <script>
+
+
+     const passDom = document.getElementById('password')
+     const tombolDOm = document.getElementById('login')
+     const pesanDom = document.getElementById('pesan') 
+
+
+     tombolDOm.addEventListener('click', function(){
+         const passord = passDom.value;
+        //  if(passord == '12345') {
+        //      pesanDom.innerHTML="selamat anda telah login"
+        //  }
+        switch (passord){
+            case "hai":
+            pesanDom.innerHTML = "halo juga"
+            break
+
+            case "hello":
+            pesanDom.innerHTML = "hello lanjut"
+            break
+
+            default:
+            pesanDom.innerHTML = "terserah ente"
+        }
+
+
+     })  
+    // const namaku = prompt("masukkan namamu")
+    // if (namaku == "vian"){
+    //     alert("selamat datang coy")
+    // }else if(namaku=="revty"){
+    //     alert("mantab coy")
+    // }
+    
+    
+    </script>
+    
+</body>
+</html>
